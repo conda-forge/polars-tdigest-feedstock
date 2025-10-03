@@ -2,7 +2,7 @@ schema_version: 1
 
 context:
   name: polars-tdigest
-  version: 0.1.10
+  version: "0.1.11"
 
 package:
   name: ${{ name|lower }}
@@ -10,10 +10,10 @@ package:
 
 source:
   url: https://pypi.org/packages/source/${{ name[0] }}/${{ name }}/polars_tdigest-${{ version }}.tar.gz
-  sha256: b8f19c5c7496873ae5bd7a58e444f513117bd4733ba435755f9da9888a7edb18
+  sha256: de7522eb564ea78d4b9fbefb634450dff51c17ea94e1f66cb424672cdb714d8c
 
 build:
-  number: 1
+  number: 0
   script:
     - ${{ PYTHON }} -m pip install . -vv --no-deps --no-build-isolation
     - cargo-bundle-licenses --format yaml --output THIRDPARTY.yml
